@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar&family=Poppins&family=Shrikhand&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+//reset
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  //variables
+  $logoFuente:'Shrikhand', cursive;
+  $primeraFuente: 'Poppins', sans-serif;
+  $segundaFuente:'Eczar', serif;
+  
+  
+  $colores:(
+    "primerColor": #223843,
+    "segundoColor": #EFF1F3,
+    "tercerColor": #DBD3D8,
+    "cuartoColor": #D8B4A0,
+    "quintoColor": #D77A61
+  );
+
+  body{
+    background-color: map-get($colores,"primerColor");
+  }
+
+  //clases utiles
+  //text
+  .text-crema{
+    color: map-get($colores,"cuartoColor");
+  }
+
+
+
