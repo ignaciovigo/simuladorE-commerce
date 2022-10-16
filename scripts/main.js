@@ -1,5 +1,5 @@
 import { comidas } from "./productos.js";
-import { Carrito } from "./Carrito.js";
+import { Carrito } from "./carrito.js";
 
 function pedirCantidad() {
   // pide un numero asegurandose que sea tipo number y lo retorna.
