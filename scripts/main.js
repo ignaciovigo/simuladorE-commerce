@@ -1,92 +1,46 @@
+import { comidas } from "./productos.js";
+import { Carrito } from "./carrito.js";
 
-function obtenerFruta(){ //pide y retorna un nombre de fruta que coincida con las frutas a la venta, retorna string vacio si se ingresó como pedido.
-    let nombreFruta = prompt(`
-    -PAPA     p.unitario -> 10$
-    -CEBOLLA     p.unitario -> 20$
-    -NARANJA     p.unitario -> 15$
-    -MANZANA     p.unitario -> 10$
-    -MANDARINA   p.unitairo -> 15$
-    -TOMATE      p.unitairo -> 10$
-    -FRUTILLA    p.unitario -> 8$
-    -LECHUGA     p.unitario -> 30$
-    \nIngrese un nombre correspondiente de la fruta/verdura que desea comprar (  pulse enter para salir ) : `);
-    while(nombreFruta != ''){
-        nombreFruta = nombreFruta.toUpperCase();
-        if (nombreFruta == 'PAPA' || nombreFruta == 'CEBOLLA' || nombreFruta == 'NARANJA' || nombreFruta == 'MANZANA' || nombreFruta == 'MANDARINA' || nombreFruta == 'TOMATE' || nombreFruta == 'FRUTILLA' || nombreFruta == 'LECHUGA'){
-            return nombreFruta;
-        }else{
-            nombreFruta = prompt(` ERROR al ingresar nombre de fruta/verdura
-            -PAPA     p.unitario -> 10$
-            -CEBOLLA     p.unitario -> 20$
-            -NARANJA     p.unitario -> 15$
-            -MANZANA     p.unitario -> 10$
-            -MANDARINA   p.unitairo -> 15$
-            -TOMATE      p.unitairo -> 10$
-            -FRUTILLA    p.unitario -> 8$
-            -LECHUGA     p.unitario -> 30$  
-            \n Ha ingresado un nombre incorrecto, ingrese nuevamente un nombre correspondiente de la fruta/verdura que desea comprar (pulse enter para salir) : `);
-        }
+function pedirCantidad() {
+  // pide un numero asegurandose que sea tipo number y lo retorna.
+  let numero = prompt("Ingrese la cantidad de unidades que quiere añadir a su orden: ");
+  while (isNaN(Number(numero)) || numero <= 0) {
+    numero = prompt("Ha ingresado una cantidad no valida, ingrese nuevamente: ");
+  }
+  return numero;
+}
+function mostrarComidas(comidas) {
+  //retorna un string con el nombre y precio de todas las hamburguesas y extras
+  let texto = "";
+  comidas.forEach((e) => (texto += ` ${e.id}-${e.nombre} -----> $${e.precio}\n`));
+  return texto;
+}
+function addComida(orden) {
+  //solicita el ingreso de la eleccion del id correspondiente a la comida que desea añadir al carrito hasta que el usuario ingrese cero.
+  let numComida = 0;
+  let cantidad = 0;
+  do {
+    numComida = parseInt(prompt(mostrarComidas(comidas) + "ingrese el numero correspondiente de lo que quiere añadir a su carrito ( 0 para salir ): "));
+    if (isNaN(numComida)) alert("El valor otorgado no es un numero");
+    if (numComida < 0 || numComida > comidas.length) alert("Ha ingresado un valor fuera de rango");
+    if (numComida > 0 && numComida <= comidas.length) {
+      let encontrar = comidas.find((e) => e.id === numComida);
+      cantidad = pedirCantidad();
+      orden.addProducto(encontrar, cantidad);
     }
-    return nombreFruta;
+  } while (numComida !== 0);
 }
 
-function obtenerNumero(){ // pide un numero asegurandose que sea tipo number y lo retorna.
-    let numero = prompt("ingrese la cantidad de la fruta/verdura elegida que desea comprar: ");
-    while (isNaN(Number(numero)) || numero <= 0){
-        numero = prompt("Ha ingresado un numero no valido, ingrese nuevamente: ");
-    }
-    return numero;
-}
-
-function subtotal(fruta, cantidad){ //retorna el calculo del precio por cantidad de acuerdo a la fruta ingresada.
-    switch(fruta){
-        case "PAPA": case "TOMATE":
-            return 10 * cantidad;
-        case "CEBOLLA":
-            return 20 * cantidad;
-        case "NARANJA": case "MANDARINA":
-            return 15 * cantidad;
-        case "MANZANA":
-            return 15 * cantidad;
-        case "FRUTILLA":
-            return 8 * cantidad;
-        case "LECHUGA":
-            return 30 * cantidad;
-    }
-}
-
-
-alert('¡Bienvenido a la verduleria!');
-let fruta = '';
-let cantidad = 0;
-let registro = ''
-let total = 0;
-let opcion = ''
-
-do{
-    opcion = parseInt(prompt('Ingrese una opcion:\n1-Añadir frutas/verduras a su compra\n2- Ver total a pagar\n3- Realizar una nueva compra\n4- Salir'));
-    if (opcion === 1){
-        nombreFruta = obtenerFruta();
-        while(nombreFruta != ""){
-            cantidad = obtenerNumero();
-            total += subtotal(nombreFruta, cantidad);
-            registro += `Compró -> cantidad: ${cantidad}, fruta/verdura: ${nombreFruta}\n`
-            nombreFruta = obtenerFruta();
-        }
-    }
-    else if(opcion === 2){
-        alert(`Registro:\n${registro}\nEl total de su compra es de: $${total}`);
-    }
-    else if(opcion === 3){
-        registro = "";
-        total = 0;
-    }
-    else if (opcion === 4){
-        alert('Gracias por su compra!');
-        break
-    }
-    else{
-        alert('valor ingresado invalido');
-    }
-}while(true);
-
+let orden = new Carrito();
+let opcion = 0;
+do {
+  opcion = parseInt(prompt("1-Añadir una comida a su orden\n2- Ver total a pagar\n3- Realizar una nueva orden \n4- Salir"));
+  if (opcion > 0 && opcion <= 4) {
+    if (opcion === 1) addComida(orden);
+    if (opcion === 2) alert(orden.mostrarCarrito());
+    if (opcion === 3) orden = new Carrito();
+    if (opcion === 4) alert("Muchas gracias por comprar en SmashBurger!");
+  } else {
+    alert("Ha ingresado un valor no permitido, intente nuevamente.");
+  }
+} while (opcion !== 4);
