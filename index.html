@@ -6,104 +6,277 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>Primera Pre-entrega</title>
+    <title>Smash Burger</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-
   <body>
-    <section class="hero">
-      <header class="container-md-fluid m-md-5">
-        <nav class="navbar navbar-expand-md">
-          <div class="container-fluid flex-md-column align-items-md-center justify-content-md-center align-content-center">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="./img/logo.png" alt="Foto del logo Smash Burger" width="200px" /></a>
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasDarkLabel">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
-                <ul class="navbar-nav alig-items-baseline justify-content-md-evenly flex-grow-1 pe-3">
+    <header class="container-md-fluid sticky-top">
+      <nav class="navbar bg-negroOscuro">
+        <div class="container-fluid justify-content-start">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span><i class="bi bi-list fs-1 px-2 text-naranja"></i></span>
+          </button>
+          <a class="navbar-brand ms-5 me-5" href="#"><img src="./img/logo.png" width="200px" alt="imagen del logo Smash Burger" /></a>
+          <div class="ms-5 d-none d-lg-block">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-search"></i>
+              </span>
+              <input type="search" class="form-control" placeholder="Buscar producto..." aria-label="Input group example" aria-describedby="basic-addon1" />
+            </div>
+          </div>
+          <div class="offcanvas offcanvas-start bg-negro text-naranja" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title ff-first fs-5 text-uppercase" id="offcanvasNavbarLabel">smash burger</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column">
+              <ul class="navbar-nav flex-grow-1 pe-3 align-items-stretch">
+                <li class="nav-item">
+                  <a class="nav-link ff-first fs-4 text-crema" aria-current="page" href="#">Ingresar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link ff-first fs-4 text-crema" href="#">Registrarse</a>
+                </li>
+                <div class="d-flex mt-auto justify-content-evenly">
                   <li class="nav-item">
-                    <a class="nav-link d-flex flex-md-column justify-content-center align-items-center" aria-current="page" href="#">
-                      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="36.000000pt" height="43.000000pt" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet">
-                        <g transform="translate(0.000000,48.000000) scale(0.009375,-0.009375)" fill="#D8B4A0" stroke="none">
-                          <path
-                            d="M2215 5075 c-981 -115 -1762 -650 -2030 -1390 -73 -202 -87 -337 -46 -431 17 -37 17 -41 -3 -89 -29 -73 -28 -210 3 -288 24 -62 113 -167 163 -193 l28 -15 0 -133 0 -134 -55 -27 c-116 -57 -221 -184 -259 -314 -23 -79 -21 -232 4 -312 20 -67 64 -145 107 -191 l25 -26 -18 -54 c-37 -107 -19 -251 45 -349 l29 -44 5 -235 c4 -155 10 -254 20 -290 64 -245 232 -426 472 -508 l80 -27 1775 0 1775 0 80 27 c240 82 409 263 472 508 9 34 16 135 20 265 l6 210 38 44 c105 120 133 293 70 436 l-20 46 34 50 c58 85 78 150 83 275 5 129 -9 192 -64 290 -41 74 -133 162 -209 199 l-55 27 0 122 0 122 46 22 c191 93 274 344 178 536 -24 47 -25 53 -13 116 10 59 9 78 -10 169 -70 325 -250 635 -518 891 -408 390 -940 623 -1583 696 -154 17 -523 17 -675 -1z m755 -219 c729 -116 1303 -452 1623 -953 90 -140 158 -301 192 -455 16 -75 16 -79 -2 -115 -10 -20 -34 -44 -53 -55 -33 -17 -115 -18 -2170 -18 -2055 0 -2137 1 -2170 18 -19 11 -43 35 -53 55 -18 36 -18 40 -2 115 143 643 775 1184 1595 1366 99 21 238 44 370 60 90 11 569 -2 670 -18z m1872 -1797 c12 -83 -39 -175 -116 -210 -54 -24 -119 -24 -198 1 -90 29 -226 36 -311 16 -76 -18 -126 -41 -210 -98 -100 -68 -159 -90 -240 -91 -93 0 -133 13 -242 84 -50 32 -111 67 -135 78 -67 29 -173 45 -264 38 -121 -9 -172 -29 -335 -135 -78 -51 -124 -65 -217 -65 -81 1 -128 18 -224 83 -127 86 -229 120 -359 120 -122 0 -215 -32 -334 -112 -100 -68 -159 -90 -240 -91 -93 0 -133 13 -242 84 -50 32 -111 67 -135 78 -106 47 -269 51 -398 11 -77 -24 -140 -25 -190 -4 -44 18 -88 58 -109 98 -14 27 -23 109 -13 119 3 3 28 1 56 -4 30 -6 921 -8 2210 -7 1992 3 2162 4 2194 20 47 22 47 22 52 -13z m-3897 -410 c17 -8 69 -39 118 -71 148 -96 276 -129 423 -108 99 13 170 43 277 114 48 32 108 64 134 72 100 30 212 11 305 -53 132 -91 197 -119 308 -133 155 -20 269 11 434 118 86 57 155 82 225 82 87 0 141 -21 263 -103 124 -84 263 -117 404 -97 98 13 170 43 276 113 141 94 209 105 371 60 l97 -27 0 -93 0 -93 -2020 0 -2020 0 0 95 0 95 33 0 c18 0 69 11 113 25 63 20 94 24 154 21 41 -2 89 -10 105 -17z m145 -714 l286 -285 44 0 c43 0 46 2 200 155 l155 155 180 -180 180 -180 -837 0 c-833 0 -838 0 -895 22 -77 29 -154 104 -177 176 -59 178 31 360 204 413 14 4 104 8 200 8 l175 1 285 -285z m480 230 l55 -55 -103 -103 -102 -102 -157 158 -158 157 205 0 206 0 54 -55z m1825 47 c-6 -4 -186 -182 -400 -395 l-391 -386 -394 394 -395 395 795 0 c436 0 790 -4 785 -8z m1351 -24 c178 -94 221 -326 91 -483 -21 -25 -62 -58 -90 -73 l-52 -27 -810 -3 -810 -2 315 309 315 310 495 -2 495 -2 51 -27z m91 -785 c21 -83 -12 -167 -84 -213 -70 -45 -118 -48 -233 -15 -85 24 -108 27 -201 23 -133 -7 -186 -24 -301 -100 -120 -79 -170 -98 -258 -98 -82 0 -141 20 -226 76 -161 108 -225 128 -389 121 -130 -5 -187 -24 -300 -97 -140 -92 -148 -95 -260 -95 -112 0 -120 3 -260 95 -127 82 -168 94 -325 95 -164 0 -201 -11 -333 -98 -119 -78 -169 -97 -257 -97 -83 0 -142 20 -226 77 -139 95 -221 123 -359 123 -66 0 -113 -7 -182 -26 -111 -32 -160 -28 -230 19 -69 47 -108 138 -84 198 l10 27 58 -14 c47 -11 239 -14 1002 -14 l945 0 106 -105 c105 -103 108 -105 154 -105 47 0 49 2 155 105 l108 105 904 1 c837 0 909 2 969 18 88 25 89 25 97 -6z m-3869 -442 c24 -12 65 -38 91 -56 64 -46 164 -92 230 -106 32 -7 98 -9 156 -7 119 6 180 27 290 98 125 82 151 93 242 98 103 6 144 -8 262 -86 140 -93 181 -106 336 -106 164 -1 207 12 347 102 126 82 170 96 275 90 83 -5 126 -22 211 -82 114 -81 220 -116 352 -116 133 0 234 33 348 114 87 62 131 79 217 84 65 3 91 0 140 -18 36 -13 96 -24 149 -27 l89 -6 -6 -151 c-4 -116 -11 -165 -26 -210 -59 -168 -187 -287 -358 -331 -86 -23 -3420 -23 -3506 0 -127 33 -250 123 -311 228 -53 90 -67 151 -73 317 l-6 155 109 1 c85 0 122 5 169 22 82 29 210 26 273 -7z" />
-                          <path d="M2470 4709 c-39 -15 -60 -49 -60 -97 0 -35 6 -49 29 -73 65 -64 171 -20 171 71 0 54 -14 79 -55 96 -39 16 -50 16 -85 3z" />
-                          <path d="M2889 4621 c-23 -23 -29 -38 -29 -71 0 -59 37 -94 116 -109 234 -46 418 -104 586 -183 353 -169 602 -397 747 -686 34 -68 48 -86 76 -98 72 -30 145 16 145 90 0 50 -60 174 -142 293 -63 92 -215 252 -313 332 -257 207 -596 362 -952 436 -160 34 -197 33 -234 -4z" />
-                          <path d="M1543 4208 c-41 -11 -65 -47 -67 -99 -1 -34 5 -46 32 -70 69 -62 172 -20 172 70 0 71 -65 118 -137 99z" />
-                          <path d="M2323 4208 c-111 -29 -89 -198 25 -198 48 0 97 36 105 76 6 33 -9 88 -27 103 -24 20 -69 28 -103 19z" />
-                          <path d="M1037 3829 c-22 -13 -47 -61 -47 -91 0 -13 9 -37 20 -55 50 -82 190 -46 190 50 0 35 -24 83 -49 97 -25 13 -91 13 -114 -1z" />
-                          <path d="M2034 3825 c-47 -32 -56 -122 -15 -159 67 -60 181 -18 181 67 0 35 -24 83 -49 97 -28 15 -93 12 -117 -5z" />
-                          <path d="M2729 3741 c-64 -64 -20 -171 71 -171 78 0 124 62 100 135 -15 46 -44 65 -98 65 -35 0 -49 -6 -73 -29z" />
-                        </g>
+                    <a class="nav-link" href="https://www.facebook.com" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" fill="#D77A61" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
                       </svg>
-                      <p class="m-0 h3">Burguers</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link d-flex flex-md-column justify-content-center align-items-center" href="#">
-                      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="30.000000pt" height="43.000000pt" viewBox="0 0 50.000000 50.000000" preserveAspectRatio="xMidYMid meet">
-                        <g transform="translate(0.000000,50.000000) scale(0.009766,-0.009766)" fill="#D8B4A0" stroke="none"><path d="M2811 4909 c-213 -89 -293 -153 -356 -284 -45 -95 -55 -158 -55 -365 l0 -176 -77 -12 c-111 -18 -260 -71 -355 -128 -171 -103 -331 -288 -405 -470 -31 -77 -72 -236 -73 -289 -1 -12 -19 -31 -48 -50 -35 -23 -55 -46 -79 -93 l-33 -64 0 -340 0 -340 34 -34 c19 -19 43 -34 55 -34 12 0 21 -2 21 -4 0 -29 244 -1680 251 -1706 54 -171 217 -318 388 -350 30 -6 218 -10 420 -10 404 0 446 5 552 61 110 59 210 181 242 296 12 42 217 1652 217 1704 0 4 13 10 30 14 16 4 41 20 55 37 l26 30 -3 353 -3 352 -30 48 c-17 27 -51 65 -75 83 -44 34 -45 37 -56 111 -28 198 -131 398 -279 546 -123 124 -281 214 -450 258 l-85 22 0 176 c0 209 11 259 71 324 44 47 64 59 238 131 123 51 151 77 151 142 0 65 -58 122 -122 122 -12 0 -88 -28 -167 -61z m-106 -1103 c119 -40 208 -97 305 -195 110 -110 182 -245 205 -379 l7 -42 -746 0 c-538 0 -746 3 -746 11 0 27 34 138 60 195 97 214 296 377 523 429 41 9 104 13 187 11 104 -3 139 -8 205 -30z m669 -872 c14 -13 16 -49 16 -240 l0 -224 -910 0 -910 0 0 234 c0 178 3 236 13 239 6 3 409 6 894 6 789 1 883 -1 897 -15z m-104 -721 c0 -10 -45 -376 -99 -813 -64 -515 -105 -810 -115 -835 -23 -55 -81 -113 -141 -141 -50 -24 -52 -24 -416 -24 -251 0 -377 4 -400 12 -85 29 -156 104 -179 190 -5 18 -59 379 -120 803 -61 424 -113 782 -116 798 l-6 27 796 0 c752 0 796 -1 796 -17z" /></g>
+                    <a class="nav-link" href="https://www.instagram.com" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" fill="#D77A61" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
                       </svg>
-                      <p class="m-0 h3">Bebidas</p>
                     </a>
                   </li>
-                  <div class="d-flex d-md-none mt-auto p-2">
-                    <li class="nav-item mx-3">
-                      <a class="nav-link" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" fill="#D8B4A0" class="bi bi-facebook" viewBox="0 0 16 16">
-                          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                        </svg>
-                      </a>
-                    </li>
-                    <li class="nav-item mx-3">
-                      <a class="nav-link" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" fill="#D8B4A0" class="bi bi-instagram" viewBox="0 0 16 16">
-                          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                        </svg>
-                      </a>
-                    </li>
-                    <li class="nav-item mx-3">
-                      <a class="nav-link" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" fill="#D8B4A0" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                          <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
-                        </svg>
-                      </a>
-                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.whatsapp.com" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" fill="#D77A61" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                      </svg>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="container-fluid hero d-flex flex-column justify-content-center">
+        <h1 class="display-6 ff-third d-flex flex-column text-naranja">
+          <span>SMASH</span>
+          <span class="ms-5">BURGER</span>
+        </h1>
+        <h2 class="fs-5 ff-first text-salmon">Disfruta de las mejores hamburguesas de entraña con nosotros.</h2>
+      </section>
+      <section class="container-fluid mt-3">
+        <div class="row">
+          <!-- COLUMNA 1 -->
+          <div class="col-3 d-none d-lg-block">
+            <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button ff-first fs-5 text-uppercase text-naranja bg-negro" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">categorias</button>
+                </h3>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                  <div class="accordion-body bg-negroOscuro list-group p-2 rounded">
+                    <a href="#" class="list-group-item itemlist bg-negro ff-first fs-5 text-uppercase text-crema">hamburguesas</a>
+                    <a href="#" class="list-group-item itemlist bg-negro ff-first fs-5 text-uppercase text-crema">extras</a>
+                    <a href="#" class="list-group-item itemlist bg-negro ff-first fs-5 text-uppercase text-crema">bebidas</a>
                   </div>
-                  <li class="nav-item ms-3 d-none d-md-block">
-                    <a class="nav-link d-flex align-items-center" href="#">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" fill="#D8B4A0" class="bi bi-cart4" viewBox="0 0 16 16">
-                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                      </svg>
-                      <p class="m-0 h3 ps-3">2151</p>
-                    </a>
-                  </li>
-                </ul>
+                </div>
               </div>
             </div>
           </div>
-        </nav>
-      </header>
-    </section>
-    <main>
-      <section>
-        <div class="container">
-          <h1 class="titulo">
-            
-          </h1>
+          <!-- COLUMNA 2 -->
+          <div class="col-12 col-lg-6">
+            <div class="container-fluid bg-negro rounded p-0">
+              <h3 class="ff-first fs-5 text-uppercase text-crema m-0 p-2">hamburguesas</h3>
+              <div class="row row-cols-1 p-2 g-2" id="hamburguesas">
+                <!-- hamburguesas -->
+                <div class="col">
+                  <div class="card bg-negroOscuro activado">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="./img/burgers/icon_bigtinky.png" class="img-fluid" alt="..." />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body p-0">
+                          <h5 class="card-title fs-6 text-amarillo ff-first text-uppercase text-center">Antojo</h5>
+                          <p class="card-text fs-6 text-cremaClaro">Queso Reggianito - Batata Frita - Sarza (cebolla, limón, jalapeño, cilantro) - Salsa Huancaína</p>
+                          <div class="d-flex justify-content-evenly">
+                            <p class="card-text fs-4 text-amarillo m-0">$ 1148.00</p>
+                            <input class="celda" type="number" name="number" id="campoCantidad" />
+                            <button class="btn btn-danger ff-first text-cremaClaro text-uppercase" id="btnAñadir">añadir al pedido</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-negroOscuro activado">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="./img/burgers/icon_bigtinky.png" class="img-fluid" alt="..." />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body p-0">
+                          <h5 class="card-title fs-6 text-amarillo ff-first text-uppercase text-center">Antojo</h5>
+                          <p class="card-text fs-6 text-cremaClaro">Queso Reggianito - Batata Frita - Sarza (cebolla, limón, jalapeño, cilantro) - Salsa Huancaína</p>
+                          <div class="d-flex justify-content-evenly">
+                            <p class="card-text fs-4 text-amarillo m-0">$ 1148.00</p>
+                            <input class="celda" type="number" name="number" id="campoCantidad" />
+                            <button class="btn btn-danger ff-first text-cremaClaro text-uppercase" id="btnAñadir">añadir al pedido</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-negroOscuro activado">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="./img/burgers/icon_bigtinky.png" class="img-fluid" alt="..." />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body p-0">
+                          <h5 class="card-title fs-6 text-amarillo ff-first text-uppercase text-center">Antojo</h5>
+                          <p class="card-text fs-6 text-cremaClaro">Queso Reggianito - Batata Frita - Sarza (cebolla, limón, jalapeño, cilantro) - Salsa Huancaína</p>
+                          <div class="d-flex justify-content-evenly">
+                            <p class="card-text fs-4 text-amarillo m-0">$ 1148.00</p>
+                            <input class="celda" type="number" name="number" id="campoCantidad" />
+                            <button class="btn btn-danger ff-first text-cremaClaro text-uppercase" id="btnAñadir">añadir al pedido</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-negroOscuro activado">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="./img/burgers/icon_bigtinky.png" class="img-fluid" alt="..." />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body p-0">
+                          <h5 class="card-title fs-6 text-amarillo ff-first text-uppercase text-center">Antojo</h5>
+                          <p class="card-text fs-6 text-cremaClaro">Queso Reggianito - Batata Frita - Sarza (cebolla, limón, jalapeño, cilantro) - Salsa Huancaína</p>
+                          <div class="d-flex justify-content-evenly">
+                            <p class="card-text fs-4 text-amarillo m-0">$ 1148.00</p>
+                            <input class="celda" type="number" name="number" id="campoCantidad" />
+                            <button class="btn btn-danger ff-first text-cremaClaro text-uppercase" id="btnAñadir">añadir al pedido</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-negroOscuro activado">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="./img/burgers/icon_bigtinky.png" class="img-fluid" alt="..." />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body p-0">
+                          <h5 class="card-title fs-6 text-amarillo ff-first text-uppercase text-center">Antojo</h5>
+                          <p class="card-text fs-6 text-cremaClaro">Queso Reggianito - Batata Frita - Sarza (cebolla, limón, jalapeño, cilantro) - Salsa Huancaína</p>
+                          <div class="d-flex justify-content-evenly">
+                            <p class="card-text fs-4 text-amarillo m-0">$ 1148.00</p>
+                            <input class="celda" type="number" name="number" id="campoCantidad" />
+                            <button class="btn btn-danger ff-first text-cremaClaro text-uppercase" id="btnAñadir">añadir al pedido</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-negroOscuro activado">
+                    <div class="row g-0 align-items-center">
+                      <div class="col-4">
+                        <img src="./img/burgers/icon_bigtinky.png" class="img-fluid" alt="..." />
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body p-0">
+                          <h5 class="card-title fs-6 text-amarillo ff-first text-uppercase text-center">Antojo</h5>
+                          <p class="card-text fs-6 text-cremaClaro">Queso Reggianito - Batata Frita - Sarza (cebolla, limón, jalapeño, cilantro) - Salsa Huancaína</p>
+                          <div class="d-flex justify-content-evenly">
+                            <p class="card-text fs-4 text-amarillo m-0">$ 1148.00</p>
+                            <input class="celda" type="number" name="number" id="campoCantidad" />
+                            <button class="btn btn-danger ff-first text-cremaClaro text-uppercase" id="btnAñadir">añadir al pedido</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-cols-1 p-2 g-2">
+                <h3 class="ff-first fs-5 text-uppercase text-crema m-0 p-2">extras</h3>
+                <!-- extras -->
+              </div>
+              <div class="row row-cols-1 p-2 g-2">
+                <h3 class="ff-first fs-5 text-uppercase text-crema m-0 p-2">bebidas</h3>
+                <!-- bebidas -->
+              </div>
+            </div>
+          </div>
+          <!-- COLUMNA 3 -->
+          <div class="col-3 d-none d-lg-block ps-0">
+            <div class="container-fluid p-0 rounded bg-negro">
+              <div class="card border border-0 bg-negro p-2">
+                <div class="card-header bg-negro border border-0 d-flex justify-content-between align-items-end">
+                  <p class="fs-5 text-uppercase text-naranja fw-bold m-0">
+                    Tu pedido
+                  </p>
+                  <div class="d-flex aling-items-end">
+                    <span class="text-crema text-uppercase fw-bold m-0 lh-2"><small>vaciar pedido</small></span>
+                    <button class="btn btn-danger p-0 ms-2"><span><i class="bi bi-x"></i></span></button>
+                  </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-negro rounded itemlistPedido d-flex justify-content-between align-items-end">
+                    <p class="ff-first text-uppercase text-amarillo m-0">antojo x 1</p>
+                    <button class="btn btn-danger">
+                      <span><i class="bi bi-x"></i></span>
+                    </button>
+                  </li>
+                  <li class="list-group-item bg-negro rounded itemlistPedido d-flex justify-content-between align-items-end">
+                    <p class="ff-first text-uppercase text-amarillo m-0">antojo x 1</p>
+                    <button class="btn btn-danger">
+                      <span><i class="bi bi-x"></i></span>
+                    </button>
+                  </li>
+                  <li class="list-group-item bg-negro rounded itemlistPedido d-flex justify-content-between align-items-end">
+                    <p class="ff-first text-uppercase text-amarillo m-0">antojo x 1</p>
+                    <button class="btn btn-danger">
+                      <span><i class="bi bi-x"></i></span>
+                    </button>
+                  </li>
+                </ul>
+                <div class="card-footer bg-negroOscuro mt-2 d-flex justify-content-between">
+                  <span class="fs-5 text-uppercase text-crema">Total a pagar</span>
+                  <span class="fs-5 text-uppercase text-cremaClaro">$123.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <aside></aside>
     </main>
     <footer></footer>
-    <script type="module" src="./scripts/main.js"></script>
+    <!-- <script type="module" src="./scripts/main.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
   </body>
 </html>

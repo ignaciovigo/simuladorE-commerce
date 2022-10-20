@@ -1,0 +1,10 @@
+body{
+    background-color: map-get($colores,"primeroOscuro");
+  }
+
+.hero{
+    background-image: linear-gradient(rgba(34, 56, 67,.2),rgba(34, 56, 67,.9)),url("../img/fondo1920x1080.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height:30vh;
+  }

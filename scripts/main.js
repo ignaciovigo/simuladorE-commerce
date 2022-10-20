@@ -17,7 +17,7 @@ function mostrarComidas(comidas) {
 }
 function addComida(orden) {
   //solicita el ingreso de la eleccion del id correspondiente a la comida que desea añadir al carrito hasta que el usuario ingrese cero.
-  let numComida = 0;
+  let numComida = 0; 
   let cantidad = 0;
   do {
     numComida = parseInt(prompt(mostrarComidas(comidas) + "ingrese el numero correspondiente de lo que quiere añadir a su carrito ( 0 para salir ): "));

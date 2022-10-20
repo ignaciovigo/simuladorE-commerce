@@ -1,0 +1,49 @@
+
+//icono del menu hamburguesa
+.navbar-toggler{
+    background-color: map-get($colores, "primero");
+    &:focus{
+        box-shadow: inherit;
+    }
+    & :hover{
+        border-radius: 10px;
+    }
+}
+
+
+// acordion
+.accordion-button {
+  border: none;
+  background-color: map-get($colores, "primero");
+  &:not(.collapsed) {
+    color: map-get($colores, "quinto");
+    background-color: map-get($colores, "primero");
+    &::after {
+      filter: brightness(0%) invert(100%);
+    }
+  }
+  &:focus {
+    box-shadow: inherit;
+  }
+}
+.accordion-item {
+  border: none;
+  background-color: map-get($colores, "primeroOscuro");
+}
+
+//items del acordion
+.itemlist{
+    &:hover{
+        background-color: map-get($colores, "primeroOscuro");
+        color: map-get($colores, "sexto");
+        box-shadow: inherit;
+        transition: .3s ease-in-out;
+    }  
+}
+
+
+// input number
+.celda{
+  width: 4rem;
+  height: 100%;
+}

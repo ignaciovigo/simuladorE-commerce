@@ -6,29 +6,78 @@
     margin: 0;
     box-sizing: border-box;
   }
+//options bootstrap
+$enable-shadows:true;
   //variables
-  $logoFuente:'Shrikhand', cursive;
   $primeraFuente: 'Poppins', sans-serif;
   $segundaFuente:'Eczar', serif;
+  $terceraFuente:'Shrikhand', cursive;
   
   
   $colores:(
-    "primerColor": #223843,
-    "segundoColor": #EFF1F3,
-    "tercerColor": #DBD3D8,
-    "cuartoColor": #D8B4A0,
-    "quintoColor": #D77A61
+    "primero": #223843,
+    "primeroOscuro": #192a33,
+    "segundo": #EFF1F3,
+    "tercero": #DBD3D8,
+    "cuarto": #D8B4A0,
+    "quinto": #D77A61,
+    "sexto": #FF818C,
+    "septimo":#ceb91f
   );
-
-  body{
-    background-color: map-get($colores,"primerColor");
-  }
-
   //clases utiles
-  //text
+  //fonts
+  .ff-third{
+    font-family: $terceraFuente;
+  }
+  .ff-second{
+    font-family: $segundaFuente;
+  }
+  .ff-first{
+    font-family: $primeraFuente;
+  }
+  //textos
+  .text-amarillo{
+    color: map-get($colores,"septimo");
+  }
+  .text-negro{
+    color: map-get($colores,"primero");
+  }
+  .text-blanco{
+    color: map-get($colores,"segundo");
+  }
+  .text-cremaClaro{
+    color: map-get($colores,"tercero");
+  }
   .text-crema{
-    color: map-get($colores,"cuartoColor");
+    color: map-get($colores,"cuarto");
+  }
+  .text-naranja{
+    color: map-get($colores,"quinto");
+  }
+  .text-salmon{
+    color: map-get($colores,"sexto");
+  }
+  //bg-colors
+  .bg-negro{
+    background-color: map-get($colores,"primero");
+  }
+  .bg-negroOscuro{
+    background-color: map-get($colores,"primeroOscuro");
+  }
+  .bg-blanco{
+    background-color: map-get($colores,"segundo");
+  }
+  .bg-cremaClaro{
+    background-color: map-get($colores,"tercero");
+  }
+  .bg-crema{
+    background-color: map-get($colores,"cuarto");
+  }
+  .bg-naranja{
+    background-color: map-get($colores,"quinto");
+  }
+  .bg-salmon{
+    background-color: map-get($colores,"sexto");
   }
 
-
-
+  //colors

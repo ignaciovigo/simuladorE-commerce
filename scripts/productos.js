@@ -1,4 +1,4 @@
-const hamburguesas = [
+export const hamburguesas = [
   { id: 1, imagen: "./img/burgers/icon_paticomple.png", nombre: "PATICOMPLE", descripcion: "Queso Pategrás - Tomates Marinados - Lechuga Capuchina - Alioli.", precio: 950.0 },
   { id: 2, imagen: "./img/burgers/icon_parrillera.png", nombre: "PARRILLERA", descripcion: "Queso Provoleta con Chimmichurri - Morrón a la Plancha - Cebolla Roja - Ketchup ahumado. ", precio: 980.0 },
   { id: 3, imagen: "./img/burgers/icon_cuzco.png", nombre: "CUZCO", descripcion: "Queso Reggianito - Batata Frita - Sarza (cebolla, limón, jalapeño, cilantro) - Salsa Huancaína", precio: 980.0 },

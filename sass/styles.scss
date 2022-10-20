@@ -1,2 +1,6 @@
 // oscuro: 223843, cremalight: EFF1F3, cremadark:DBD3D8, piel:D8B4A0, naranja:D77A61
-@import "./partials/_base.scss";
+@import "./partials/_base.scss"; //resets, vars,mixins,clases utiles
+@import "./partials/_layout.scss"; //layout, contenedores, sistema grid
+@import "./partials/_components.scss"; //componentes botones, navs,cards,etc
+@import "./partials/animations.scss"; //animatios
+@import "./partials/_mediaQueries.scss"; //media queries

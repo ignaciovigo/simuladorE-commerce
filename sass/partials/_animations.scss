@@ -1,0 +1,10 @@
+//hover de los productos
+.activado:hover{      
+    background-color: #192e3a;
+    transition: .3s linear all;
+}
+
+.itemlistPedido:hover{
+    background-color: map-get($colores,"primeroOscuro" );
+    transition:linear .3s all;
+}
