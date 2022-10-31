@@ -4,13 +4,14 @@ import { Carrito } from "./Carrito.js";
 function pintarSiTotalVacio() {
   if (carrito1.getTotal == 0) {
     $pedido.innerHTML = `
-    <div class="card bg-negroOscuro p-4">
+    <div class="card bg-negroOscuro p-4 animate__animated animate__fadeIn">
       <img src="./img/index.svg" class="card-img" alt="foto que indica que el pedido esta vacio">
       <div class="card-img-overlay d-flex justify-content-center align-items-center">
         <p class="fs-5 ff-first text-crema m-0 text-center">Su pedido se encuentra vacio</p>
       </div>
     </div>`;
-    $total.textContent = `$${0}`;
+    $cuerpoModal.innerHTML = document.querySelector("#columna_3 .card").innerHTML;
+    return `$${0}`;
   } else {
     return `$${carrito1.getTotal}`;
   }
@@ -37,8 +38,15 @@ function evalNum(e) {
 // -----variables----
 const carrito1 = new Carrito(),
   $pedido = document.getElementById("carritoCard"),
-  $total = document.getElementById("Total");
-pintarSiTotalVacio();
+  $total = document.querySelector(".total"),
+  $cuerpoModal = document.querySelector(".modal-body"),
+  $buscador = document.getElementById("buscador");
+carrito1.productos = JSON.parse(localStorage.getItem("productos")) || [];
+if (carrito1.cantidadPedidos != 0) {
+  $pedido.innerHTML = carrito1.mostrarCarritoHTML();
+  $cuerpoModal.innerHTML = document.querySelector("#columna_3 .card").innerHTML;
+}
+$total.textContent = pintarSiTotalVacio();
 
 //renderizado de productos
 const $contenedorHamburguesas = document.getElementById("hamburguesas"),
@@ -49,19 +57,19 @@ const $contenedorHamburguesas = document.getElementById("hamburguesas"),
   $fragmentoExtras = document.createDocumentFragment(),
   $fragmentoBebidas = document.createDocumentFragment();
 
-productos.forEach((e) => {
-  if (e.id < 200) {
-    modificarTemplate($templateProductos, e);
+productos.forEach((pdcto) => {
+  if (pdcto.id < 200) {
+    modificarTemplate($templateProductos, pdcto);
     const $templateHamburguesas = $templateProductos.cloneNode(true);
     $fragmentoHamburguesas.appendChild($templateHamburguesas);
   }
-  if (e.id > 200 && e.id < 300) {
-    modificarTemplate($templateProductos, e);
+  if (pdcto.id > 200 && pdcto.id < 300) {
+    modificarTemplate($templateProductos, pdcto);
     const $templateExtras = $templateProductos.cloneNode(true);
     $fragmentoExtras.appendChild($templateExtras);
   }
-  if (e.id > 300) {
-    modificarTemplate($templateProductos, e);
+  if (pdcto.id > 300) {
+    modificarTemplate($templateProductos, pdcto);
     const $templateBebidas = $templateProductos.cloneNode(true);
     $fragmentoBebidas.appendChild($templateBebidas);
   }
@@ -87,15 +95,21 @@ document.addEventListener("click", (evento) => {
     );
     evento.target.previousElementSibling.value = 1;
     $pedido.innerHTML = carrito1.mostrarCarritoHTML();
-    $total.textContent = `$${carrito1.getTotal}`;
+    $total.textContent = pintarSiTotalVacio();
+    $cuerpoModal.innerHTML = document.querySelector("#columna_3 .card").innerHTML;
+    localStorage.setItem("productos", JSON.stringify(carrito1.productos));
   }
   if (evento.target.matches("#carritoCard .btn-remover")) {
     carrito1.delPedido(evento.target.dataset.btn);
     $pedido.innerHTML = carrito1.mostrarCarritoHTML();
     $total.textContent = pintarSiTotalVacio();
+    $cuerpoModal.innerHTML = document.querySelector("#columna_3 .card").innerHTML;
+    localStorage.setItem("productos", JSON.stringify(carrito1.productos));
   }
-  if (evento.target.matches("#columna_3 button") || evento.target.matches("#columna_3 button i")) {
+  if (evento.target.matches(".limpiar")) {
     carrito1.clearPedido();
     $total.textContent = pintarSiTotalVacio();
+    $cuerpoModal.innerHTML = document.querySelector("#columna_3 .card").innerHTML;
+    localStorage.removeItem("productos");
   }
 });

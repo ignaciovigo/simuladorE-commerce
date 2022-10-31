@@ -1,83 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Eczar&family=Poppins&family=Shrikhand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Eczar&family=Poppins&family=Shrikhand&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 //reset
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 //options bootstrap
-$enable-shadows:true;
-  //variables
-  $primeraFuente: 'Poppins', sans-serif;
-  $segundaFuente:'Eczar', serif;
-  $terceraFuente:'Shrikhand', cursive;
-  
-  
-  $colores:(
-    "primero": #223843,
-    "primeroOscuro": #192a33,
-    "segundo": #EFF1F3,
-    "tercero": #DBD3D8,
-    "cuarto": #D8B4A0,
-    "quinto": #D77A61,
-    "sexto": #FF818C,
-    "septimo":#ceb91f
-  );
-  //clases utiles
-  //fonts
-  .ff-third{
-    font-family: $terceraFuente;
-  }
-  .ff-second{
-    font-family: $segundaFuente;
-  }
-  .ff-first{
-    font-family: $primeraFuente;
-  }
-  //textos
-  .text-amarillo{
-    color: map-get($colores,"septimo");
-  }
-  .text-negro{
-    color: map-get($colores,"primero");
-  }
-  .text-blanco{
-    color: map-get($colores,"segundo");
-  }
-  .text-cremaClaro{
-    color: map-get($colores,"tercero");
-  }
-  .text-crema{
-    color: map-get($colores,"cuarto");
-  }
-  .text-naranja{
-    color: map-get($colores,"quinto");
-  }
-  .text-salmon{
-    color: map-get($colores,"sexto");
-  }
-  //bg-colors
-  .bg-negro{
-    background-color: map-get($colores,"primero");
-  }
-  .bg-negroOscuro{
-    background-color: map-get($colores,"primeroOscuro");
-  }
-  .bg-blanco{
-    background-color: map-get($colores,"segundo");
-  }
-  .bg-cremaClaro{
-    background-color: map-get($colores,"tercero");
-  }
-  .bg-crema{
-    background-color: map-get($colores,"cuarto");
-  }
-  .bg-naranja{
-    background-color: map-get($colores,"quinto");
-  }
-  .bg-salmon{
-    background-color: map-get($colores,"sexto");
-  }
+$enable-shadows: true;
+//variables
+$primeraFuente: "Poppins", sans-serif;
+$segundaFuente: "Eczar", serif;
+$terceraFuente: "Shrikhand", cursive;
 
-  //colors
+$colores: (
+  "primero": #223843,
+  "primeroOscuro": #192a33,
+  "segundo": #eff1f3,
+  "tercero": #dbd3d8,
+  "cuarto": #d8b4a0,
+  "quinto": #d77a61,
+  "sexto": #ff818c,
+  "septimo": #ceb91f,
+  "octavo": #000,
+);
+//clases utiles
+//fonts
+.ff-third {
+  font-family: $terceraFuente;
+}
+.ff-second {
+  font-family: $segundaFuente;
+}
+.ff-first {
+  font-family: $primeraFuente;
+}
+//textos
+.text-amarillo {
+  color: map-get($colores, "septimo");
+}
+.text-negro {
+  color: map-get($colores, "primero");
+}
+.text-blanco {
+  color: map-get($colores, "segundo");
+}
+.text-cremaClaro {
+  color: map-get($colores, "tercero");
+}
+.text-crema {
+  color: map-get($colores, "cuarto");
+}
+.text-naranja {
+  color: map-get($colores, "quinto");
+}
+.text-salmon {
+  color: map-get($colores, "sexto");
+}
+.text-0 {
+  color: map-get($colores, "octavo");
+}
+//bg-colors
+.bg-negro {
+  background-color: map-get($colores, "primero");
+}
+.bg-negroOscuro {
+  background-color: map-get($colores, "primeroOscuro");
+}
+.bg-blanco {
+  background-color: map-get($colores, "segundo");
+}
+.bg-cremaClaro {
+  background-color: map-get($colores, "tercero");
+}
+.bg-crema {
+  background-color: map-get($colores, "cuarto");
+}
+.bg-naranja {
+  background-color: map-get($colores, "quinto");
+}
+.bg-salmon {
+  background-color: map-get($colores, "sexto");
+}
+
+//colors

@@ -27,23 +27,27 @@
 }
 
 .text-blanco {
-  color: #EFF1F3;
+  color: #eff1f3;
 }
 
 .text-cremaClaro {
-  color: #DBD3D8;
+  color: #dbd3d8;
 }
 
 .text-crema {
-  color: #D8B4A0;
+  color: #d8b4a0;
 }
 
 .text-naranja {
-  color: #D77A61;
+  color: #d77a61;
 }
 
 .text-salmon {
-  color: #FF818C;
+  color: #ff818c;
+}
+
+.text-0 {
+  color: #000;
 }
 
 .bg-negro {
@@ -55,23 +59,23 @@
 }
 
 .bg-blanco {
-  background-color: #EFF1F3;
+  background-color: #eff1f3;
 }
 
 .bg-cremaClaro {
-  background-color: #DBD3D8;
+  background-color: #dbd3d8;
 }
 
 .bg-crema {
-  background-color: #D8B4A0;
+  background-color: #d8b4a0;
 }
 
 .bg-naranja {
-  background-color: #D77A61;
+  background-color: #d77a61;
 }
 
 .bg-salmon {
-  background-color: #FF818C;
+  background-color: #ff818c;
 }
 
 body {
@@ -83,6 +87,11 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 30vh;
+}
+
+.sticky {
+  position: sticky;
+  top: 12vh;
 }
 
 .navbar-toggler {
@@ -100,7 +109,7 @@ body {
   background-color: #223843;
 }
 .accordion-button:not(.collapsed) {
-  color: #D77A61;
+  color: #d77a61;
   background-color: #223843;
 }
 .accordion-button:not(.collapsed)::after {
@@ -117,7 +126,7 @@ body {
 
 .itemlist:hover {
   background-color: #192a33;
-  color: #FF818C;
+  color: #ceb91f;
   box-shadow: inherit;
   transition: 0.3s ease-in-out;
 }
@@ -125,6 +134,28 @@ body {
 .celda {
   width: 4rem;
   height: 100%;
+  border-radius: 5px;
+  outline: none;
+}
+
+.botonAddPedido {
+  border: none;
+  font-size: 0.9rem;
+}
+.botonAddPedido:hover {
+  background-color: #c29612;
+}
+
+.botonUsuario {
+  background-color: #223843;
+  border: none;
+}
+.botonUsuario:hover {
+  color: #ceb91f;
+}
+
+#boton-mobile {
+  z-index: 1;
 }
 
 .activado:hover {
