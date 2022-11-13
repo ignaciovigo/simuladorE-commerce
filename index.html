@@ -7,9 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Smash Burger</title>
+    <!-- CDN BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- CDN ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- STYLES CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <header class="container-md-fluid sticky-top">
@@ -19,9 +22,9 @@
             <span><i class="bi bi-list fs-1 px-2 text-naranja"></i></span>
           </button>
           <a class="navbar-brand ms-5 me-5" href="#"><img src="./img/logo.png" width="150px" alt="imagen del logo Smash Burger" /></a>
-          <div class="ms-5 d-none d-lg-block">
+          <div class="ms-5">
             <div class="input-group">
-              <!-- <input type="search" id="buscador" class="form-control rounded-pill" placeholder="Buscar producto..." aria-label="Input group example" aria-describedby="basic-addon1" /> -->
+              <input type="search" id="buscador" class="form-control rounded-pill" placeholder="Buscar producto..." />
             </div>
           </div>
           <!-- CANVAS -->
@@ -31,13 +34,21 @@
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body d-flex flex-column">
+              <div class="d-flex justify-content-start fs-5 m-0 text-uppercase pb-2"><i class="bi bi-person-circle me-1"></i><span class="text-blanco" id="nombreUsuario">usuario</span></div>
               <ul class="navbar-nav flex-grow-1 pe-3 align-items-stretch">
-                <li class="nav-item d-grid pb-2">
-                  <!-- <button type="button" class="btn botonUsuario p-2 ff-first fs-4 text-crema"><i class="bi bi-box-arrow-in-left"></i>ingresar</button> -->
-                </li>
-                <li class="nav-item d-grid">
-                  <!-- <button type="button" class="btn botonUsuario p-2 ff-first fs-4 text-crema"><i class="bi bi-box-arrow-in-right"></i>Registrarse</button> -->
-                </li>
+                <div id="botonesLoggin" class="d-none">
+                  <li class="nav-item d-grid">
+                    <button type="button" id="cerrarSession" class="btn botonUsuario p-2 ff-first fs-4 text-crema"><i class="bi bi-file-person-fill"></i>Cerrar sesión</button>
+                  </li>
+                </div>
+                <div id="botonesLogOut" class="d-block">
+                  <li class="nav-item d-grid pb-2">
+                    <button type="button" id="ingresar" data-bs-toggle="modal" data-bs-target="#modalIniciarSession" class="btn botonUsuario p-2 ff-first fs-4 text-crema"><i class="bi bi-box-arrow-in-left"></i>ingresar</button>
+                  </li>
+                  <li class="nav-item d-grid">
+                    <button type="button" id="registrarse" data-bs-toggle="modal" data-bs-target="#modalUsuarioRegistro" class="btn botonUsuario p-2 ff-first fs-4 text-crema"><i class="bi bi-box-arrow-in-right"></i>Registrarse</button>
+                  </li>
+                </div>
                 <div class="d-flex mt-auto flex-column text-center">
                   <p class="ff-first fs-5 text-crema text-uppercase">contacto</p>
                   <div class="d-flex justify-content-evenly">
@@ -78,6 +89,7 @@
       </nav>
     </header>
     <main>
+      <!-- MAIN  -->
       <section class="container-fluid hero d-flex flex-column justify-content-center">
         <h1 class="display-6 ff-third d-flex flex-column text-naranja">
           <span>SMASH</span>
@@ -88,7 +100,7 @@
       <section class="container-fluid mt-3">
         <div class="row">
           <!-- COLUMNA 1 -->
-          <div class="col-3 d-none d-lg-block">
+          <div class="col-3 d-none pe-0 d-lg-block">
             <div class="accordion accordion-flush sticky animate__animated animate__fadeIn" id="accordionPanelsStayOpenExample">
               <div class="accordion-item">
                 <h3 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -107,6 +119,10 @@
           <!-- COLUMNA 2 -->
           <div class="col-12 col-lg-6" id="columna_2">
             <div class="container-fluid bg-negro rounded p-0">
+              <div class="row row-cols-1 p-2 g-2 d-none" id="mostrarBusqueda">
+                <h3 class="ff-first fs-5 text-uppercase text-crema m-0 p-2">Busqueda</h3>
+                <!-- busqueda -->
+              </div>
               <h3 class="ff-first fs-5 text-uppercase text-crema m-0 p-2">hamburguesas</h3>
               <div class="row row-cols-1 p-2 g-2" id="hamburguesas">
                 <!-- hamburguesas -->
@@ -128,7 +144,7 @@
                 <div class="card-header bg-negro border border-0 d-flex justify-content-between align-items-end">
                   <p class="fs-5 text-uppercase text-naranja fw-bold m-0">Tu pedido</p>
                   <div class="d-flex justify-content-center align-items-center">
-                    <span class="text-crema text-uppercase fw-bold m-0 lh-2">vaciar pedido</span>
+                    <span class="text-crema text-uppercase fw-bold m-0 lh-2">vaciar</span>
                     <div class="">
                       <button class="btn btn-danger limpiar ms-1"><i class="bi bi-trash pe-none"></i></button>
                     </div>
@@ -141,6 +157,9 @@
                   <span class="fs-5 text-uppercase text-crema">Total a pagar</span>
                   <span class="fs-5 text-uppercase text-cremaClaro total"></span>
                 </div>
+                <div class="card-footer bg-negroOscuro mt-2 d-flex justify-content-between">
+                  <button type="button" class="btn btn-success w-100 fs-5 text-uppercase" data-btn="pagar" data-bs-toggle="modal" data-bs-target="#modalEntrega">Pagar</button>
+                </div>
               </div>
             </div>
           </div>
@@ -150,6 +169,7 @@
     <section class="row d-lg-none justify-content-center sticky-bottom animate__animated animate__fadeIn mx-3" id="boton-mobile">
       <button role="button" class="btn btn-warning display-1 text-uppercase rounded-pill p-3 fs-4 ff-first fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">ver pedido</button>
     </section>
+    <!-- modal carrito mobile  -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content bg-negro">
@@ -157,15 +177,112 @@
             <h1 class="modal-title ff-first fs-5 text-uppercase text-naranja" id="exampleModalLabel">smash burger</h1>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer border-0">
-            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button> -->
-            <!-- <button type="button" class="btn btn-primary">pagar</button> -->
+          <div class="modal-body" id="carritoMobile"></div>
+        </div>
+      </div>
+    </div>
+    <!-- modal registro usuario -->
+    <div class="modal fade" id="modalUsuarioRegistro" tabindex="-1" aria-labelledby="modal-registro" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-negroOscuro">
+          <div class="modal-header border-0">
+            <h1 class="modal-title fs-5 text-naranja text-uppercase ff-first" id="modal-registro">Registro</h1>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formularioRegistro" action="">
+              <div class="form-floating mb-3">
+                <input type="email" list="none" class="form-control bg-negro border-0 user text-blanco" data-email="nuevoEmail" id="floatingInput" placeholder="name@example.com" required />
+                <label for="floatingInput" class="fs-5 text-naranja">Direccion email:</label>
+                <div class="form-text">Nunca compartiremos tu direccion email con otros.</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control bg-negro border-0 user text-blanco passUsuarioR" data-pass="nuevaPass" id="floatingPassword" placeholder="Password" required />
+                <label for="floatingPassword" class="fs-5 text-naranja">Contraseña:</label>
+                <div class="form-text">Tu contraseña debe contener solo numeros y letras entre 8-20 caracteres.</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control bg-negro border-0 user text-blanco" data-pass="repetirPass" id="floatingPassword" placeholder="Password" />
+                <label for="floatingPassword" class="fs-5 text-naranja">Repita contraseña:</label>
+                <div class="form-text">Asegurese de que ambos campos coincidan.</div>
+              </div>
+              <div class="modal-footer border-0 d-flex flex-column justify-content-center">
+                <button type="submit" class="btn-form-success px-3 py-2 text-uppercase text-blanco rounded bg-naranja">registrarse</button>
+                <button type="button" class="btn btn-secondary text-uppercase cerrar bg-negro border-0" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    <footer></footer>
+    <!-- modal inicio session -->
+    <div class="modal fade" id="modalIniciarSession" tabindex="-1" aria-labelledby="modal-inicio" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-negroOscuro">
+          <div class="modal-header border-0">
+            <h1 class="modal-title fs-5 text-naranja text-uppercase ff-first" id="modal-inicio">Iniciar sessión</h1>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formularioIniciarSession" action="">
+              <div class="form-floating mb-3">
+                <input type="email" list="none" class="form-control bg-negro border-0 user text-blanco" data-email="email" id="floatingInput" placeholder="name@example.com" required />
+                <label for="floatingInput" class="fs-5 text-naranja">Direccion email:</label>
+                <div class="form-text">Ingresa el email con el que te registraste.</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control bg-negro border-0 user text-blanco passUsuarioR" data-pass="pass" id="floatingPassword" placeholder="Password" required />
+                <label for="floatingPassword" class="fs-5 text-naranja">Contraseña:</label>
+                <div class="form-text">No compartas tu contraseña con nadie.</div>
+              </div>
+              <div class="modal-footer border-0 d-flex flex-column justify-content-center">
+                <button type="submit" class="btn-form-success px-3 py-2 text-uppercase text-blanco rounded bg-naranja" id="botonIniciarSession">Iniciar sesión</button>
+                <button type="button" class="btn btn-secondary text-uppercase cerrar bg-negro border-0" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Formulario de Entrega -->
+    <div class="modal fade" id="modalEntrega" tabindex="-1" aria-labelledby="modal-entrega" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-negroOscuro">
+          <div class="modal-header border-0">
+            <h1 class="modal-title fs-5 text-naranja text-uppercase ff-first" id="modal-entrega">datos de entrega</h1>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formEntrega" action="">
+              <div class="form-floating mb-3">
+                <input type="text" list="none" class="form-control bg-negro border-0 text-blanco user" data-formEntrega="direccion" id="direccion" placeholder="Direccion de entrega" required />
+                <label for="direccion" class="fs-5 text-naranja">Direccion de entrega:</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" list="none" class="form-control bg-negro border-0 text-blanco user" data-formEntrega="localidad" id="localidad" placeholder="Localidad:" required />
+                <label for="localidad" class="fs-5 text-naranja">Localidad:</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control bg-negro border-0 text-blanco user" data-formEntrega="piso" id="piso" placeholder="N° Departamento" />
+                <label for="piso" class="fs-5 text-naranja">N° Departamento(opcional): </label>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea type="text" class="form-control bg-negro border-0 text-blanco user" data-formEntrega="referencia" id="referencia" placeholder="Referencias..."></textarea>
+                <label for="referencia" class="fs-5 text-naranja">Referencias(opcional): </label>
+              </div>
+              <div class="modal-footer border-0 d-flex flex-column justify-content-center">
+                <button type="submit" id="btnEntregaConfirm" class="btn-form-success bg-naranja px-3 py-2 text-uppercase text-blanco rounded text-center" data-btn="confirmar"><p class="text-blanco p-0 m-0">confirmar</p></button>
+                <button type="button" class="btn btn-secondary text-uppercase cerrar bg-negro border-0" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="container text-center">
+      <p><small class="text-naranja">Developed by Ignacio Vigo</small></p>
+    </footer>
+    <!-- TEMPLATE DE LAS CARDS PARA LOS PRODUCTOS -->
     <template id="templateProductos">
       <div class="col">
         <div class="card bg-negroOscuro activado">
@@ -177,10 +294,14 @@
               <div class="card-body p-0">
                 <h5 class="card-title fs-6 text-amarillo ff-first text-uppercase text-center"></h5>
                 <p class="card-text fs-6 text-cremaClaro"></p>
-                <div class="row justify-content-evenly align-items-center">
-                  <p class="card-text fs-4 text-amarillo m-0 col-6 col-md-4 text-center"></p>
-                  <input class="celda col-4" min="1" value="1" max="99" type="number" name="number" />
-                  <button class="btn btn-warning botonAddPedido text-0 ff-first text-uppercase col-10 col-md-4">añadir al pedido</button>
+                <div class="row justify-content-around align-items-center">
+                  <div class="col-12 p-0 d-flex justify-content-center align-items-center pb-2">
+                    <p class="card-text fs-4 text-amarillo m-0 col-4 col-md-4 text-center p-0"></p>
+                    <button class="btn-cuantitativo btn-disminuir me-1"><i class="bi bi-dash text-blanco pe-none"></i></button>
+                    <input class="celda text-center text-blanco" min="1" value="1" max="99" type="number" name="number" />
+                    <button class="btn-cuantitativo btn-sumar ms-1"><i class="bi bi-plus text-blanco pe-none"></i></button>
+                  </div>
+                  <button class="btn btn-warning botonAddPedido text-0 ff-first text-uppercase col-10 col-md-6">añadir al pedido</button>
                 </div>
               </div>
             </div>
@@ -188,8 +309,20 @@
         </div>
       </div>
     </template>
-    <!-- <script type="module" src="./scripts/main.js"></script> -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("KVqOZkAqnhia0b08W");
+      })();
+    </script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- main.js -->
     <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>

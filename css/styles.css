@@ -26,6 +26,10 @@
   color: #223843;
 }
 
+.text-negroOscuro {
+  color: #192a33;
+}
+
 .text-blanco {
   color: #eff1f3;
 }
@@ -132,10 +136,15 @@ body {
 }
 
 .celda {
-  width: 4rem;
-  height: 100%;
+  width: 2.5rem;
+  height: 2rem;
+  border: none;
   border-radius: 5px;
   outline: none;
+  background-color: #223843;
+}
+.celda:focus {
+  outline: 2px solid #0a58ca;
 }
 
 .botonAddPedido {
@@ -156,6 +165,69 @@ body {
 
 #boton-mobile {
   z-index: 1;
+}
+
+.user:focus {
+  background-color: #223843;
+  color: #dbd3d8;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.btn-cuantitativo {
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.btn-sumar {
+  background-color: #198754;
+}
+.btn-sumar:hover {
+  background-color: #167549;
+}
+.btn-sumar:focus {
+  box-shadow: #146c43;
+}
+.btn-sumar:active {
+  background-color: #146c43;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn-disminuir {
+  background-color: #dc3545;
+}
+.btn-disminuir:hover {
+  background-color: #bb2d3b;
+}
+.btn-disminuir:focus {
+  box-shadow: #b02a37;
+}
+.btn-disminuir:active {
+  background-color: #b02a37;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn-form-success {
+  text-decoration: none;
+  border: none;
+  transition: all 0.2s;
+}
+.btn-form-success:hover {
+  background: #b16651;
+}
+.btn-form-success:focus, .btn-form-success:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .activado:hover {

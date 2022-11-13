@@ -41,10 +41,15 @@
 
 // input number
 .celda {
-  width: 4rem;
-  height: 100%;
+  width: 2.5rem;
+  height: 2rem;
+  border: none;
   border-radius: 5px;
   outline: none;
+  background-color: map-get($colores, "primero");
+  &:focus {
+    outline: 2px solid #0a58ca;
+  }
 }
 
 .botonAddPedido {
@@ -65,4 +70,66 @@
 }
 #boton-mobile {
   z-index: 1;
+}
+.user:focus {
+  background-color: map-get($colores, "primero");
+  color: map-get($colores, "tercero");
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.btn-cuantitativo {
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+.btn-sumar {
+  background-color: #198754;
+  &:hover {
+    background-color: #167549;
+  }
+  &:focus {
+    box-shadow: #146c43;
+  }
+  &:active {
+    background-color: #146c43;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+}
+.btn-disminuir {
+  background-color: #dc3545;
+  &:hover {
+    background-color: #bb2d3b;
+  }
+  &:focus {
+    box-shadow: #b02a37;
+  }
+  &:active {
+    background-color: #b02a37;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+}
+
+.btn-form-success {
+  text-decoration: none;
+  border: none;
+  transition: all 0.2s;
+  &:hover {
+    background: #b16651;
+  }
+  &:focus,
+  &:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
 }

@@ -8,6 +8,7 @@
 }
 //options bootstrap
 $enable-shadows: true;
+
 //variables
 $primeraFuente: "Poppins", sans-serif;
 $segundaFuente: "Eczar", serif;
@@ -41,6 +42,9 @@ $colores: (
 }
 .text-negro {
   color: map-get($colores, "primero");
+}
+.text-negroOscuro {
+  color: map-get($colores, "primeroOscuro");
 }
 .text-blanco {
   color: map-get($colores, "segundo");
