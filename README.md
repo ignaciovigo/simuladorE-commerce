@@ -15,7 +15,8 @@ Dicha página está diseñada y desarrollada con las siguientes herramientas:
 
 ### Características de la pagina web
 La pagina web posee las siguientes características como producto de las herramientas aplicadas:
-- **Diseño responsivo**: el sitio se adapta a todos los dispositivos ya sea en computadoras de escritorio, laptops, smartphones o tablets.- **Estructuración**: cuenta con una estructura ordenada que permite que el sitio sea fácil de modificar y mantener a través del tiempo.
+- **Diseño responsivo**: el sitio se adapta a todos los dispositivos ya sea en computadoras de escritorio, laptops, smartphones o tablets.
+- **Estructuración**: cuenta con una estructura ordenada que permite que el sitio sea fácil de modificar y mantener a través del tiempo.
 - **Imágenes**: las imágenes fueron tomadas de bancos de imágenes gratuitas, modificadas y comprimidas con Adobe Photoshop CS6.
 - **Interactividad**: Posee funciones que el usuario puede realizar como añadir, eliminar o vaciar productos en el pedido. Registrarse, iniciar o cerrar sesión.
 - **host**: La página se encuentra desplegada en Netlify, pueden verla haciendo [click aquí](https://smashburger-ig.netlify.app/ "click aquí").
