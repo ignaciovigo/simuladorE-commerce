@@ -434,7 +434,7 @@ $formularioEntrega.addEventListener("submit", (e) => {
         referencia: $referencia.value,
         total: carrito1.getTotal,
       };
-      emailjs.send("ticketVenta", "templateVenta", templateParams).then( 
+      emailjs.send("ticket", "templateVenta", templateParams).then( 
         //metodo de email js que se conecta con un servicio de email para enviar emails desde el cliente una vez completado los parametros necesarios. retorna una promesa.
         (resp) => {
           $('#modalEntrega').modal('hide');
@@ -460,6 +460,18 @@ $formularioEntrega.addEventListener("submit", (e) => {
         },
         (error) => {
           console.log("failed..", error);
+          $botonConf.classList.replace("bg-negro", "bg-naranja");
+          $botonConf.innerHTML = `<p class="text-blanco p-0 m-0">confirmar</p>`;
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title:'Ocurrió un error!',
+            text: "Intente nuevamente mas tarde",
+            color: "#d77a61",
+            background: "#192a33",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       );
     }
