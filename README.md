@@ -1,7 +1,7 @@
 [![](https://smashburger-ig.netlify.app/img/logo.png)](https://smashburger-ig.netlify.app/)
 # Bienvenido al repositorio del proyecto SmashBurger!
 ## Introducción
-El proyecto SmashBurger es una página web que simula un E-commerce de una hamburguesería, dando lugar, a que el usuario pueda interactuar añadiendo y eliminando los distintos productos que la página ofrece. Una vez escogidos los productos, el usuario deberá iniciar sesión para poder efectuar la compra, posteriormente, podrá presionar el botón pagar y completar el formulario de registro sin problemas. Dicho registro enviará un mail con la información del carrito a la dirección de correo con el que se registró el usuario anteriormente. La página también cuenta con un campo de búsqueda en donde el usuario podrá buscar algún producto en particular mediante un valor asignado por el mismo.
+El proyecto SmashBurger es una página web que simula un E-commerce de una hamburguesería, dando lugar, a que el usuario pueda interactuar añadiendo y eliminando los distintos productos que la página ofrece. Una vez escogidos los productos, el usuario deberá iniciar sesión para poder efectuar la compra, posteriormente, podrá presionar el botón pagar y completar el formulario con los datos de entrega sin problemas. Dicho formulario, enviará un mail con la información del carrito a la dirección de correo con el que se registró el usuario anteriormente. La página también cuenta con un campo de búsqueda en donde el usuario podrá buscar algún producto en particular mediante un valor asignado por el mismo.
 
 Dicha página está diseñada y desarrollada con las siguientes herramientas:
  - HTML
